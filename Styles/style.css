@@ -111,8 +111,8 @@ body {
 
 .please-gif {
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 400px;
+    height: 400px;
     pointer-events: none;
     z-index: 0;
 }
@@ -314,23 +314,31 @@ body {
     order: 2; 
     margin-top: 80px; 
 }
-/* HEART */ 
-.cssload-main {
-    position: absolute;
-    content: '';
-    left: 50%;
-    transform: translate(-100%, -240%);
-    -o-transform: translate(-100%, -240%);
-    -ms-transform: translate(-100%, -240%);
-    -webkit-transform: translate(-100%, -240%);
-    -moz-transform: translate(-100%, -240%);
-    z-index: 1000;
-    margin: 80px; 
-    bottom: 50px;
-    left: 47%;
 
-  }
-  
+.love-meter {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: visible;
+    padding-bottom: 30px;
+    z-index: 1000;
+}
+
+/* HEART */
+.cssload-main {
+    position: fixed;
+    bottom: calc(20px + 250px); 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1001; 
+    width: 50px; 
+    height: 50px; 
+    margin: 0; 
+}
   .cssload-main * {
     font-size: 62px;
   }

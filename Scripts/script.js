@@ -36,16 +36,22 @@ noBtn.addEventListener('mouseover', () => {
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
     
-    let randomX = Math.floor(Math.random() * maxX);
-    let randomY = Math.floor(Math.random() * maxY);
-    
-    const yesRect = yesBtn.getBoundingClientRect();
-    if (randomY < yesRect.bottom && 
-        randomX < yesRect.right && 
-        randomX + noBtn.offsetWidth > yesRect.left) {
-        randomY = yesRect.bottom + 10;
+    let randomX, randomY;
+    let overlap = true;
+
+    while (overlap) {
+        randomX = Math.floor(Math.random() * maxX);
+        randomY = Math.floor(Math.random() * maxY);
+
+        const yesRect = yesBtn.getBoundingClientRect();
+        overlap = (
+            randomY < yesRect.bottom &&
+            randomX < yesRect.right &&
+            randomX + noBtn.offsetWidth > yesRect.left &&
+            randomY + noBtn.offsetHeight > yesRect.top
+        );
     }
-    
+
     noBtn.style.position = 'absolute';
     noBtn.style.left = randomX + 'px';
     noBtn.style.top = randomY + 'px';
