@@ -15,6 +15,22 @@ function createHeart() {
 }
 
 setInterval(createHeart, 80);
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+// Extract the name from the URL
+const name = getQueryParam('name');
+
+// Update the placeholder with the name
+if (name) {
+    document.getElementById('namePlaceholder').textContent = name;
+} else {
+    // If no name is provided, you can set a default or handle it accordingly
+    document.getElementById('namePlaceholder').textContent = 'Cutie';
+}
+
 
 noBtn.addEventListener('mouseover', () => {
     const maxX = window.innerWidth - noBtn.offsetWidth;

@@ -283,6 +283,10 @@ body {
     -webkit-transform: translate(-100%, -240%);
     -moz-transform: translate(-100%, -240%);
     z-index: 1000;
+    margin: 80px; 
+    bottom: 50px;
+    left: 45%;
+
   }
   
   .cssload-main * {
@@ -581,3 +585,35 @@ body {
       border-color: rgb(228,228,228);
     }
   }
+
+  .intro {
+    font-family: 'Pacifico', cursive; 
+    font-size: 2rem;
+    color: #ff6f61; 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+    animation: fadeIn 2s ease-in-out; 
+    z-index: inherit;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.intro {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+#namePlaceholder {
+    color: #ff1493; 
+    font-weight: bold; 
+    text-decoration: underline; 
+}
